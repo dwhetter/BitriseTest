@@ -7,6 +7,9 @@ import android.view.Menu;
 import android.widget.Toast;
 
 public class AsyncTaskPerformActivity extends Activity {
+	final int MAX_COUNT = 1000;
+	private int count = 0;
+
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -23,12 +26,25 @@ public class AsyncTaskPerformActivity extends Activity {
 	}
 	
 	public void doneCounting() {
-		Toast.makeText(this, "Done Counting to 100000", Toast.LENGTH_SHORT).show();
+		Toast.makeText(this, "Done Counting to " + MAX_COUNT, Toast.LENGTH_SHORT).show();
+	}
+
+	public void executeAsyncTask() {
+		new MyAsyncTask().execute();
+	}
+
+	public int getCount() {
+		for (long i=0; i < MAX_COUNT; i++) {
+			count++;
+		}
+
+		return count;
 	}
 	
-	private class MyAsyncTask extends AsyncTask<Void, Void, Void> {
+	public class MyAsyncTask extends AsyncTask<Void, Void, Void> {
 	     public Void doInBackground(Void... params) {
-	    	for (long i=0; i < 100000; i++) {
+	    	for (long i=0; i < MAX_COUNT; i++) {
+	    		count++;
 	    		System.out.println(i);
 	    	}
 			return null;
