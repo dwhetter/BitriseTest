@@ -5,6 +5,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import static junit.framework.Assert.assertEquals;
+import static junit.framework.Assert.assertTrue;
 
 public class AsyncTaskPerformActivityTest {
 
@@ -16,7 +17,12 @@ public class AsyncTaskPerformActivityTest {
     }
 
     @Test
-    public void testMyAsyncTask() {
+    public void testGetCount() {
         assertEquals(1000, asyncTaskPerformActivity.getCount());
+    }
+
+    @Test
+    public void testDoneCounting() {
+        assertTrue(asyncTaskPerformActivity.doneCounting());
     }
 }
