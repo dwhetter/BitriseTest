@@ -22,7 +22,9 @@ public class AsyncTaskPerformActivityTest {
     }
 
     @Test
-    public void testDoneCounting() {
+    public void testDoneCounting2() {
         assertTrue(asyncTaskPerformActivity.doneCounting());
     }
+
+
 }
