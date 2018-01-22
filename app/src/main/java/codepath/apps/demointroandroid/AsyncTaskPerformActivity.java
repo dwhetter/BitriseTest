@@ -25,8 +25,14 @@ public class AsyncTaskPerformActivity extends Activity {
 		return true;
 	}
 	
-	public void doneCounting() {
+	public boolean doneCounting() {
 		Toast.makeText(this, "Done Counting to " + MAX_COUNT, Toast.LENGTH_SHORT).show();
+
+		if (count < MAX_COUNT) {
+			return false;
+		}
+
+		return true;
 	}
 
 	public void executeAsyncTask() {
