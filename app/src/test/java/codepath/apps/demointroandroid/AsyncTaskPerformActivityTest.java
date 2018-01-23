@@ -25,6 +25,4 @@ public class AsyncTaskPerformActivityTest {
     public void testDoneCounting2() {
         assertTrue(asyncTaskPerformActivity.doneCounting());
     }
-
-
 }
