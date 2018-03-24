@@ -1,3 +1,4 @@
+// Updated
 apply plugin: 'com.android.application'
 apply plugin: 'jacoco'
 
@@ -27,7 +28,7 @@ dependencies {
 
 jacoco {
     toolVersion = "0.7.9"
-//    reportsDir = file("$buildDir/customJacocoReportDir")
+//  reportsDir = file("$buildDir/customJacocoReportDir")
 }
 
 def coverageSourceDirs = [
